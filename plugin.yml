@@ -1,0 +1,9 @@
+name: MagicSpells
+version: 1.0.0
+author: BinAmCoden
+description: Apply for Ethyria
+main: me.binamcoden.magicspells.MagicSpells
+
+commands:
+  spell:
+    description: Conjure three diffrent spells
