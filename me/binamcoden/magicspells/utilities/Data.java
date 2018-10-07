@@ -1,6 +1,7 @@
 package me.binamcoden.magicspells.utilities;
 
 import org.bukkit.block.Block;
+import org.bukkit.entity.Fireball;
 import org.bukkit.entity.Player;
 import org.bukkit.scheduler.BukkitRunnable;
 import org.bukkit.scheduler.BukkitTask;
@@ -14,7 +15,6 @@ public class Data {
     /* affectedPlayer, Fire owner */
     public HashMap<Player, Player> hitbyfire = new HashMap<>();
 
-    public HashMap<Player, BukkitTask> healprogress = new HashMap<>();
-
+    public ArrayList<Fireball> fireball = new ArrayList<>();
 
 }

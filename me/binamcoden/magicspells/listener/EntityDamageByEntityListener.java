@@ -21,7 +21,10 @@ public class EntityDamageByEntityListener implements Listener {
         if (entity instanceof Player) {
             Player player = (Player) entity;
             if (damager instanceof Fireball) {
-                event.setDamage(2);
+                if(MagicSpells.getInstance().data.fireball.contains(damager)) {
+                    event.setDamage(2);
+                    MagicSpells.getInstance().data.fireball.remove(damager);
+                }
             }
         }
     }

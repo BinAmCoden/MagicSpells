@@ -12,7 +12,7 @@ import org.bukkit.event.entity.EntityDamageEvent;
 
 public class EntityDamageListener implements Listener {
 
-    Data data = MagicSpells.getInstance().data;
+    private Data data = MagicSpells.getInstance().data;
 
     @EventHandler
     public void onDamage(EntityDamageEvent event) {

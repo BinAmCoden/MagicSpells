@@ -10,7 +10,7 @@ import org.bukkit.event.block.BlockFadeEvent;
 
 public class BlockFadeListener implements Listener {
 
-    Data data = MagicSpells.getInstance().data;
+    private Data data = MagicSpells.getInstance().data;
 
     @EventHandler
     public void onFade(BlockFadeEvent event) {
