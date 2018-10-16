@@ -11,7 +11,11 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.entity.EntityDamageEvent;
 
+import java.util.ArrayList;
+
 public class EntityDamageByEntityListener implements Listener {
+
+    private ArrayList<Fireball> fireball = MagicSpells.getInstance().fireball;
 
     @EventHandler
     public void onHit(EntityDamageByEntityEvent event) {
@@ -21,9 +25,9 @@ public class EntityDamageByEntityListener implements Listener {
         if (entity instanceof Player) {
             Player player = (Player) entity;
             if (damager instanceof Fireball) {
-                if(MagicSpells.getInstance().data.fireball.contains(damager)) {
-                    event.setDamage(2);
-                    MagicSpells.getInstance().data.fireball.remove(damager);
+                if(fireball.contains(damager)) {
+                    event.setDamage(MagicSpells.FIREBALL_FIRE_DAMAGE);
+                    fireball.remove(damager);
                 }
             }
         }

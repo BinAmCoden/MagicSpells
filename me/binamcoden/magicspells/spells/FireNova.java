@@ -28,12 +28,12 @@ public class FireNova extends Spell {
                 @Override
                 public void run() {
 
-                    if (count <= 5) {
+                    if (count <= MagicSpells.MAX_FIREBALLS) {
                         playConjureEffect();
                         Location from = wizzard.getLocation().add(0, 2, 0);
                         Vector vector = target.getEyeLocation().toVector().subtract(from.toVector());
                         Fireball fireball = wizzard.launchProjectile(Fireball.class, vector);
-                        MagicSpells.getInstance().data.fireball.add(fireball);
+                        MagicSpells.getInstance().fireball.add(fireball);
                         fireball.setInvulnerable(false);
                         fireball.setFireTicks(0);
                     } else {

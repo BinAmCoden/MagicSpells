@@ -18,19 +18,19 @@ public class CommandSpell implements CommandExecutor {
 
         if (sender instanceof Player) {
             Player player = (Player) sender;
-            if (args.length == 0 || args.length > 1) {
+            if (args.length > MagicSpells.MAX_ARGUMENT_LENGTH || args.length < MagicSpells.MAX_ARGUMENT_LENGTH) {
                 player.sendMessage(prefix + "§cUsage: §7/spell <1,2,3>");
             } else {
                 try {
                     int spell = Integer.valueOf(args[0]);
                     switch (spell) {
-                        case 1:
+                        case MagicSpells.FIRE_NOVA:
                             new FireNova(player).conjure();
                             break;
-                        case 2:
+                        case MagicSpells.SPREAD:
                             new Spread(player).conjure();
                             break;
-                        case 3:
+                        case MagicSpells.HEALING_TOTEM:
                             new HealingTotem(player).conjure();
                             break;
                     }

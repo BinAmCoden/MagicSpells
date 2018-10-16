@@ -24,7 +24,7 @@ public class Spread extends Spell{
 
             @Override
             public void run() {
-                if (r <= 10) {
+                if (r <= MagicSpells.MAX_FIRE_RADIUS) {
                     cylinder(wizzard.getLocation(), Material.FIRE, r);
                 } else {
                     cancel();
@@ -47,7 +47,7 @@ public class Spread extends Spell{
                 if ((cx - x) * (cx - x) + (cz - z) * (cz - z) <= rSquared) {
                     Block fire = w.getHighestBlockAt(new Location(w, x, cy, z).add(0, 1, 0));
                     fire.setType(mat);
-                    MagicSpells.getInstance().data.magicfire.put(fire, wizzard);
+                    MagicSpells.getInstance().magicFire.put(fire, wizzard);
                 }
             }
         }
